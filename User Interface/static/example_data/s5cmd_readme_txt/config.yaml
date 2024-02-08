@@ -1,0 +1,36 @@
+# set up source information for cloud
+# source:
+#   # bucket_name: "jim-test-edge2"
+#   bucket_name: "testgb210"
+#   bucket_prefix: "" # "mysubdir/"
+#   region: "us-east-2"
+#   access_key: 'AKIA5M24AVYELT5IZAGH'
+#   secret_access_key: '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'
+
+# set up source information for snowball
+source:
+  # bucket_name: "jim-test-edge2"
+  bucket_name: "920926596616-manualimport"
+  bucket_prefix: "" # "mysubdir/"
+  region: "snow" # set to 'snow' if it is a snowball
+  access_key: 'AKIACEMHEZDAOJSGY2TSNRWGE3ECWX43MPOL7YZKEHTB3GQQW2'
+  secret_access_key: 'AA1WrEBDEcXqiQZNAJi53bUr59hm7+J1wIWgaZCw'
+
+# set up local information for src_sync_single.py
+local:
+  directory: "temp_files_for_transfer/"
+
+# set up destination information for cloud
+destination:
+  bucket_name: "920926596616-manualimport"
+  bucket_prefix: "" # "mysubdir/"
+  region: "snow"
+  access_key: 'AKIACEMHEZDAOJSGY2TSNRWGE3JOZJBG3D7QXU2WSIJMQST52EGNDGZOFH2V'
+  secret_access_key: 'liYNrD9m0KdzrkZvyOcLPIkJO4gWWKCCgJ23XR/m'
+
+# Configuration for managing data transfer from s3-edge to localstore based on size
+transfer_settings:
+  max_size_to_transfer_src2l: 121073738204 # Maximum total size (in bytes) of files to transfer at one time from source to localstore
+  max_size_to_transfer_l2dest: 200 # NOT IMPLEMENTED: Maximum total size (in gigabytes) of files to transfer at one time from localstore to destination
+  dest_endpoint_url: http://10.20.1.25:8080 # Endpoint URL for destination s3 bucket, if none set to 'no_endpoint', for legacy snowball use http + port #, otherwise https without port #
+  src_endpoint_url: http://10.20.10.5:8080 # Endpoint URL for source s3 bucket, if none set to 'no_endpoint', for legacy snowball use http + port #, otherwise https without port #
