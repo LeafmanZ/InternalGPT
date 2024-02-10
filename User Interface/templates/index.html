@@ -70,7 +70,7 @@
                         var safeDocumentName = source[0].replace(/\./g, '')
                             return '<li class="sidebar-item">'
                                 + '<a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#d' + safeDocumentName + exchange.Epoch + '" aria-expanded="true" aria-controls="' + safeDocumentName + '" style="color: #687079; padding-top: 0px; padding-left: 25px;">'
-                                + '<i class="fa-regular fa-file-lines pe-2"></i>'
+                                + '<i class="fa-sharp fa-solid fa-eye" style="cursor: pointer; padding-left: 5px; padding-right: 5px;" data-bs-toggle="modal" data-bs-target="#documentViewerModal" onclick="viewDocument(\'' + '/static/databases/' + source[2] + '/' + source[0] + '\', \'' + source[0] + '\')""></i>'
                                 + '<strong>' + source[2] + ' - ' + source[0] + '</strong>'
                                 + '</a>'
                                 + '<ul id="d' + safeDocumentName + exchange.Epoch + '" class="sidebar-dropdown list-unstyled collapse">'
@@ -247,7 +247,7 @@
                             var safeDocumentName = source[0].replace(/\./g, '');
                                 return '<li class="sidebar-item">'
                                     + '<a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#d' + safeDocumentName + data.epoch_time + '" aria-expanded="true" aria-controls="' + safeDocumentName + '" style="color: #687079; padding-top: 0px; padding-left: 25px;">'
-                                    + '<i class="fa-regular fa-file-lines pe-2"></i>'
+                                    + '<i class="fa-sharp fa-solid fa-eye" style="cursor: pointer; padding-left: 5px; padding-right: 5px;" data-bs-toggle="modal" data-bs-target="#documentViewerModal" onclick="viewDocument(\'' + '/static/databases/' + source[2] + '/' + source[0] + '\', \'' + source[0] + '\')""></i>'
                                     + '<strong>' + source[2] + ' - ' + source[0] + '</strong>'
                                     + '</a>'
                                     + '<ul id="d' + safeDocumentName + data.epoch_time + '" class="sidebar-dropdown list-unstyled collapse">'
