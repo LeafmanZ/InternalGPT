@@ -35,7 +35,8 @@ def perform_ocr(img_path, filename):
     result = paddle_ocr.ocr(img_path, cls=False)
 
     # Initialize an empty string to store extracted text
-    extracted_text = f"Document type: Image\nDocument name: {filename}\nDocument text: "
+    # extracted_text = f"Document type: Image\nDocument name: {filename}\nDocument text: "
+    extracted_text = "Text in Image: "
 
     # Iterate through the results and concatenate text
     if result != [None]:

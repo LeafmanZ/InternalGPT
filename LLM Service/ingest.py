@@ -154,6 +154,9 @@ def create_db(db_name: str = None):
     logging.info(f"Loaded {len(documents)} documents from {source_directory}")
     logging.info(f"Split into {len(texts)} chunks of text")
 
+    for text in texts:
+        text.page_content = f"Document Name: {text.metadata['source'][text.metadata['source'].rindex('/')+1:]}\n{text.page_content}"
+
     if "instructor" in EMBEDDING_MODEL_NAME:
         embeddings = HuggingFaceInstructEmbeddings(model_name=EMBEDDING_MODEL_NAME, model_kwargs={"device": DEVICE_TYPE})
     elif "bge" in EMBEDDING_MODEL_NAME:
